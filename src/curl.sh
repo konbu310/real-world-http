@@ -27,3 +27,9 @@ curl -d @test.json -H "Content-Type: application/json" http://localhost:18888
 
 # 強制的にメソッドを変更しボディを送信する（非推奨）
 curl -X GET --data "hello=world" http://localhost:18888
+
+# フォームの送信
+curl --http1.0 -d title="The Art of Community" -d author="Jono Bacon" http://localhost:18888
+
+# BASIC認証を利用する
+curl --http1.0 --basic -u user:pass http://localhost:18888
